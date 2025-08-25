@@ -1,4 +1,4 @@
-# Leliel's Dotfiles
+# sam9's dotfiles
 These are my personal dotfiles. Feel free to use them.
 
 ## What does it have?
