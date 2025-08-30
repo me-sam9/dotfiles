@@ -36,7 +36,7 @@ function ToggleHiddenAll()
 end
 
 ToggleHiddenAll()
-vim.keymap.set('n', '<S-h>', '<Cmd>lua ToggleHiddenAll()<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<S-h>", "<Cmd>lua ToggleHiddenAll()<CR>", { noremap = true, silent = true })
 
 -- set colorscheme
-vim.cmd('colorscheme tokyodark')
+vim.cmd("colorscheme tokyodark")
