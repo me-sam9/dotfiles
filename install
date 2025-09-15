@@ -18,20 +18,20 @@ for i in $(find "$DOT_HOME" -type f); do
 	mkdir -p "$(dirname "$link")"
 	
 	if [ -e "$link" ] && [ ! -L "$link" ]; then
-		echo "${RED}Warning: ${NORMAL}$link ${RED}already exists.${NORMAL}"
-		echo -n "Do you want to overwrite it? ${NORMAL}[${GREEN}y${NORMAL}/${RED}N${NORMAL}]: "
+		printf "${RED}Warning: ${NORMAL}$link ${RED}already exists.${NORMAL}\n"
+		printf "Do you want to overwrite it? ${NORMAL}[${GREEN}y${NORMAL}/${RED}N${NORMAL}]: "
 		read answer
 
 		if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
 			rm -rf "$link"
 		else
-			echo "${YELLOW}Skipping ${NORMAL}$link${YELLOW} ...${NORMAL}\n"
+			printf "${YELLOW}Skipping ${NORMAL}$link${YELLOW} ...${NORMAL}\n"
 			continue
 		fi
 	fi
 	
 	ln -sf "$i" "$link"
-	echo "${GREEN}Linked ${NORMAL}$link ${GREEN}-> ${NORMAL}$i"
+	printf "${GREEN}Linked ${NORMAL}$link ${GREEN}-> ${NORMAL}$i\n"
 done
 
 echo "All files from $DOT_HOME have been symlinked to $HOME."
